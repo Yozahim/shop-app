@@ -3,7 +3,8 @@ import './preview-collection.style.scss'
 
 import CollectionItem from '../collection-item/collection-item'
 
-const PreviewCollection = ({ title, items }) => {
+const PreviewCollection = ({ title, items, ...other }) => {
+  // console.log(other)
   return (
     <div className='collection-preview'>
       <h1 className='title'>{ title.toUpperCase() }</h1>

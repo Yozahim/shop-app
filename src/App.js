@@ -13,6 +13,7 @@ import Header from './components/header/header'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
+import ContactPage from './pages/contact/contact';
 
 class App extends Component {
 
@@ -50,6 +51,7 @@ class App extends Component {
         <Route path='/shop' component={ShopPage}></Route>
         <Route exact path='/checkout' component={CheckoutPage}></Route>
         <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUpPage/>)}></Route>
+        <Route path='/contact' component={ContactPage}></Route>
       </Switch>
     </div>
     )

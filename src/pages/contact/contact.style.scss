@@ -1,0 +1,62 @@
+.contact-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 100px 0;
+  align-items: center;
+  justify-content: center;
+
+  .top-image-container {
+    width: 100%;
+    opacity: 0.6;
+    height: 23vw;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 30%;
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .image-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      
+      .image-content-text-header {
+        color: black;
+        font-weight: bold;
+        opacity: 1;
+        text-transform: uppercase;
+      }
+      
+      .image-content-text {
+        color: black;
+        opacity: 1;
+        font-weight: 350;
+      }
+    }
+  }
+  .site-content {
+    margin: 30px auto;
+    width: 100%;
+    display: flex;
+
+    .left-site-content {
+      width: 60%;
+    }
+    
+    .right-site-content {
+      width: 30%;
+      margin-left: 100px;
+      
+    }
+  }
+}

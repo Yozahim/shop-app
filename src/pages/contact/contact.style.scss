@@ -8,7 +8,7 @@
 
   .top-image-container {
     width: 100%;
-    opacity: 0.6;
+    opacity: 0.9;
     height: 23vw;
     overflow: hidden;
     align-items: center;
@@ -31,14 +31,15 @@
       position: absolute;
       
       .image-content-text-header {
-        color: black;
-        font-weight: bold;
+        color: white;
+        font-weight: 450;
+        font-size: 42px;
         opacity: 1;
         text-transform: uppercase;
       }
       
       .image-content-text {
-        color: black;
+        color: white;
         opacity: 1;
         font-weight: 350;
       }
@@ -55,13 +56,15 @@
         width: 60%;
         display: flex;
         flex-direction: column;
+        font-family: "proxima nova-n4","proxima-nova",sans-serif;
+        font-size: 18px;
       }
   
       .vertical-line {
         border-left: 1px groove grey;
         opacity: 0.2;
-        height: 400px;
-        margin: 0 0 40px 40px;
+        height: 430px;
+        margin: 10px 0 40px 40px;
       }
       
       .right-site-content {
@@ -69,6 +72,13 @@
         margin: 0 0 30px auto;
         display: flex;
         flex-direction: column;
+        font-family: "proxima nova-n4","proxima-nova",sans-serif;
+        font-size: 18px;
+      }
+
+      .header-text {
+        font-weight: 350;
+        color: #1a468d;
       }
     }
 
@@ -77,12 +87,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: lightgray;
-      margin: 50px -50px 0 -50px;
-      // margin: -50px;
+      background-color: rgb(247, 247, 247);
+      margin: 50px -65px 0 -65px;
       
       .message-content-title {
-
+        font-weight: 300;
       }
 
       .message-input {
@@ -94,6 +103,7 @@
       .message-textarea {
         max-width: 50%;
         min-width: 50%;
+        min-height: 100px;
         padding: 12px 20px;
         margin: 8px 0;
         box-sizing: border-box;

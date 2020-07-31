@@ -10,6 +10,7 @@ import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up'
 import CheckoutPage from './pages/checkout/checkout'
 
 import Header from './components/header/header'
+import Footer from './components/footer/footer'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
@@ -45,14 +46,15 @@ class App extends Component {
   render() {
     return(
     <div className="App">
-    <Header></Header>
-      <Switch>
-        <Route exact path='/' component={HomePage}></Route>
-        <Route path='/shop' component={ShopPage}></Route>
-        <Route exact path='/checkout' component={CheckoutPage}></Route>
-        <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUpPage/>)}></Route>
-        <Route path='/contact' component={ContactPage}></Route>
-      </Switch>
+      <Header></Header>
+        <Switch>
+          <Route exact path='/' component={HomePage}></Route>
+          <Route path='/shop' component={ShopPage}></Route>
+          <Route exact path='/checkout' component={CheckoutPage}></Route>
+          <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUpPage/>)}></Route>
+          <Route path='/contact' component={ContactPage}></Route>
+        </Switch>
+      <Footer></Footer>
     </div>
     )
   }

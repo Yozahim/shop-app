@@ -1,0 +1,13 @@
+.language-dropdown {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    top: 70px;
+    right: 330px;
+    z-index: 5;
+}

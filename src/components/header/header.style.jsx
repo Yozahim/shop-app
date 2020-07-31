@@ -19,6 +19,12 @@ export const LogoContainer = styled(Link)`
   padding: 25px;
 `
 
+export const LanguageContainer = styled.div`
+  height: 100%;
+  width: 70px;
+  padding: 25px;
+`
+
 export const OptionsContainer = styled.div`
   width: 50%;
   height: 100%;

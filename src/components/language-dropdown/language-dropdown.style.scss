@@ -1,13 +1,21 @@
 .language-dropdown {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid black;
-    background-color: white;
-    top: 70px;
-    right: 330px;
-    z-index: 5;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 70px;
+  right: 330px;
+  z-index: 5;
+
+  // .icon-container {
+  //   cursor: pointer;
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 }

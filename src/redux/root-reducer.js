@@ -7,6 +7,7 @@ import cartReducer from "./cart/cart.reducer";
 import directoryReducer from "./directory/directory.reducer";
 import shopReducer from "./shop/shop.reducer";
 import languageReducer from './language/language.reducer'
+import { i18nReducer } from 'react-redux-i18n'
 
 const persistConfig = {
   key: 'root',
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   directory: directoryReducer,
   shop: shopReducer,
-  language: languageReducer
+  language: languageReducer,
+  i18n: i18nReducer
 });
 
 export default persistReducer(persistConfig, rootReducer)

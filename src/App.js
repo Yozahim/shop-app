@@ -14,6 +14,7 @@ import Footer from './components/footer/footer'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
+// import { selectCurrentLocale } from './redux/i18n/i18n.selector'
 import ContactPage from './pages/contact/contact';
 
 class App extends Component {
@@ -21,6 +22,8 @@ class App extends Component {
   unsubscribeFromAuth = null
 
   componentDidMount() {
+    // checking which locale is set, then changing the page managment left - right/right - left
+    // document.dir = this.props.locale === "ar" ? "rtl" : "ltr";
     const { setCurrentUser } = this.props
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -62,7 +65,8 @@ class App extends Component {
 
 //access do props.currentUser
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  // locale: selectCurrentLocale
 })
 
 //Dispatch usera potrzebny do rozprowadzenia usera np do headera

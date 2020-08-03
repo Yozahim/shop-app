@@ -17,6 +17,8 @@ import { selectLanguageHidden } from '../../redux/language/language.selector'
 import { selectCurrentUser } from '../../redux/user/user.selector'
 import { auth } from "../../firebase/firebase.utils";
 
+import { Translate } from 'react-redux-i18n'
+
 const Header = ({ currentUser, hidden, langHidden }) => {
   // console.log(hidden, langHidden)
   return (
@@ -25,22 +27,22 @@ const Header = ({ currentUser, hidden, langHidden }) => {
       <Logo/>
     </LogoContainer>
     <OptionsContainer>
-      <LanguageContainer>
+      <LanguageContainer style={{ marginTop: 2}}>
         <LanguageIcon/>
       </LanguageContainer>
       <OptionLink to="/shop">
-        SHOP
+        <Translate value='header.shop' className='toUpper'/>
       </OptionLink>
       <OptionLink to="/contact">
-        CONTACT
+        <Translate value='header.contact' className='toUpper'/>
       </OptionLink>
       {currentUser ? (
         <OptionDiv onClick={() => auth.signOut()}>
-          SIGN OUT
+          <Translate value='header.signOut' className='toUpper'/>
         </OptionDiv>
       ) : (
         <OptionLink to="/signIn">
-          SIGN IN
+          <Translate value='header.signIn' className='toUpper'/>
         </OptionLink>
       )}
       <CartIcon />

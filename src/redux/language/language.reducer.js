@@ -1,4 +1,5 @@
 import LanguageActionTypes from "./language.types";
+// import { setLanguage } from './language.utils'
 
 const INITIAL_STATE = {
   hidden: true,
@@ -12,10 +13,16 @@ const languageReducer = (state = INITIAL_STATE, action) => {
         ...state,
         hidden: !state.hidden
       };
-    case LanguageActionTypes.CHECK_LANGUAGE_CART:
+    case LanguageActionTypes.SET_LANGUAGE_EN:
       return {
         ...state,
-        language: state.language
+        // language: setLanguage(state.language, action.payload)
+        language: true
+      };
+    case LanguageActionTypes.SET_LANGUAGE_PL:
+      return {
+        ...state,
+        language: false
       };
     default:
       return state

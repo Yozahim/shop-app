@@ -1,20 +1,24 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import { ReactComponent as PlFlag } from '../../assets/poland.svg'
 import { ReactComponent as EnFlag } from '../../assets/uk.svg'
 
+import { setLanguagePl, setLanguageEn } from '../../redux/language/language.actions'
+
 import './language-dropdown.style.scss'
 
-const LanguageDropdown = () => {
-  const handleClick = () => {
-    console.log('heheh')
-  }
-  
+const LanguageDropdown = ({ setLanguagePl, setLanguageEn }) => {  
   return (
   <div className='language-dropdown'>
-    <PlFlag onClick={handleClick}/>
-    <EnFlag onClick={handleClick}/>
+    <PlFlag onClick={setLanguagePl}/>
+    <EnFlag onClick={setLanguageEn}/>
   </div>
 )}
 
-export default LanguageDropdown
+const mapDispatchToProps = dispatch => ({
+  setLanguagePl: () => dispatch(setLanguagePl()),
+  setLanguageEn: () => dispatch(setLanguageEn())
+})
+
+export default connect(null, mapDispatchToProps)(LanguageDropdown)

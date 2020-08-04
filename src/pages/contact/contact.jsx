@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import './contact.style.scss'
 import CustomButton from '../../components/custom-button/custom-button'
 
+import { Translate } from 'react-redux-i18n'
+
 // import contactImage from '../../assets/contact.jpg'
 const imageUrl = 'https://www.choicescreening.com/hubfs/assets/images/billboards/Billboard-conatct-us.jpg'
 
@@ -29,38 +31,37 @@ const ContactPage = () => {
         style={{backgroundImage: `url(${imageUrl})`}}>  
       </div>
       <div className='image-content'>
-        <h1 className='image-content-text-header'>contact us</h1>
-        <h1 className='image-content-text'>Want to get in touch? We'd love to hear from you. Here's how you can reach us</h1>
+        <h1 className='image-content-text-header'><Translate value='contact.title'/></h1>
+        <h1 className='image-content-text'><Translate value='contact.subtitle'/></h1>
       </div>
     </div>
     <div className='site-content'>
       <div className='middle-content'>
         <div className='left-site-content'>
-          <h2 className='header-text'>Dear customer</h2>
-          <span>We feel honored that we can answer your questions and help with any unpleasantness, 
-          so if you have a problem or question, simply write to us an e-mail on address provided or just call us!</span>
-          <h2 className='header-text'>At Choice you always talk to a human!</h2>
-          <span>Have questions about background screening? Our entire team receives specialized training regularly to ensure you're receiving the best information possible. From basic questions to complex compliance inquiries, we're here to help!</span>
-          <p>Interested in learning more about our services? Our Account Executives take the time to discuss your existing background screening program and help you make smart decisions that best meet your needs.</p>
+          <h2 className='header-text'><Translate value='contact.header1'/></h2>
+          <span><Translate value='contact.text1'/></span>
+          <h2 className='header-text'><Translate value='contact.header2'/></h2>
+          <span><Translate value='contact.text2'/></span>
+          <p><Translate value='contact.text3'/></p>
         </div>
         <div className='vertical-line'></div>
         <div className='right-site-content'>
-          <h2 className='header-text'>Corporate Office</h2>
-          <span>Adress: Jagodowa 6, 60-179 Poznań</span>
-          <span>Phone: 555 978 546</span>
+          <h2 className='header-text'><Translate value='contact.header3'/></h2>
+          <span><Translate value='contact.adress'/>: Jagodowa 6, 60-179 Poznań</span>
+          <span><Translate value='contact.phone'/>: 555 978 546</span>
           <div>
             <span>E-mail: </span>
             <a href="mailto:yoza-shop@gmail.com">yoza-shop@gmail.com</a>
           </div>
-          <h2 className='header-text'>Direct Contact</h2>
-          <span>Phone: 731 986 995</span>
+          <h2 className='header-text'><Translate value='contact.header4'/></h2>
+          <span><Translate value='contact.phone'/>: 731 986 995</span>
           <div>
             <span>E-mail: </span>
             <a href="mailto:konrad.sobaniec@gmail.com">konrad.sobaniec@gmail.com</a>
           </div>
-          <h2 className='header-text'>Contact to the supplier</h2>
-          <span>Adress: Żelazna 7, 97-300 Piotrków Trybunalski</span>
-          <span>Phone: 801 400 373</span>
+          <h2 className='header-text'><Translate value='contact.header5'/></h2>
+          <span><Translate value='contact.adress'/>: Żelazna 7, 97-300 Piotrków Trybunalski</span>
+          <span><Translate value='contact.phone'/>: 801 400 373</span>
           <div>
             <span>E-mail: </span>
             <a href="mailto:dpd-contact@gmail.com">dpd-contact@gmail.com</a>
@@ -69,7 +70,7 @@ const ContactPage = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <div className='message-content'>
-          <h2 className='message-content-title'>Contact us today!</h2>
+          <h2 className='message-content-title'><Translate value='contact.contactUs'/></h2>
           <input 
             placeholder='Name'
             name='name'
@@ -94,7 +95,7 @@ const ContactPage = () => {
             onChange={handleChange}
             required
             className='message-textarea'></textarea>
-          <CustomButton style={{ marginBottom: 20 }} type='submit'>Send</CustomButton>
+          <CustomButton style={{ marginBottom: 20 }} type='submit'><Translate value='contact.send'/></CustomButton>
         </div>
       </form>
     </div>

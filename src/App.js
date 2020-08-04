@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect'
 import './App.css';
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop'
+import ItemPreview from './pages/item-preview/item-preview'
 import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up'
 import CheckoutPage from './pages/checkout/checkout'
 
@@ -53,6 +54,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={HomePage}></Route>
           <Route path='/shop' component={ShopPage}></Route>
+          <Route path='/itempreview' component={ItemPreview}></Route>
           <Route exact path='/checkout' component={CheckoutPage}></Route>
           <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUpPage/>)}></Route>
           <Route path='/contact' component={ContactPage}></Route>

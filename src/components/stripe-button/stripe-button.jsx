@@ -21,6 +21,7 @@ const StripeCheckoutButton = ({ price }) => {
       label="Pay Now"
       billingAddress
       shippingAddress
+      style={{marginBottom: 50}}
       image='https://sendeyo.com/up/d/f3eb2117da'
     ></StripeCheckout>
   )

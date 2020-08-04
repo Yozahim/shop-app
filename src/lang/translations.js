@@ -51,6 +51,20 @@ const translations = {
       password: "password",
       confirmPassword: "confirm password",
       signUp: "Sign up"
+    },
+    cartDropdown: {
+      empty: "Your cart is empty",
+      checkout: "Go to checkout"
+    },
+    checkout: {
+      product: 'Product',
+      description: 'Description',
+      quantity: 'Quantity',
+      price: 'Price',
+      remove: 'Remove',
+      total: 'Total',
+      cartAnnotation: '*Please use the following test credit card for payments* \t 4242 4242 4242 4242 - Exp: 01/21 CVV: any',
+      payNow: 'Pay Now'
     }
   },
   pl: {
@@ -104,6 +118,20 @@ const translations = {
       password: "hasło",
       confirmPassword: "potwierdź hasło",
       signUp: "Zarejestruj"
+    },
+    cartDropdown: {
+      empty: "Twój koszyk jest pusty",
+      checkout: "Idź do płatności"
+    },
+    checkout: {
+      product: 'Produkt',
+      description: 'Opis',
+      quantity: 'Ilość',
+      price: 'Cena',
+      remove: 'Usuń',
+      total: 'Razem',
+      cartAnnotation: '*Proszę używać tej pomocniczej karty do płatności* \n \t 4242 4242 4242 4242 - Termin: 01/21 CVV: jakiekolwiek',
+      payNow: 'Zapłać teraz'
     }
   }
 };

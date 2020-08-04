@@ -6,6 +6,8 @@ import CustomButton from "../custom-button/custom-button";
 import { withRouter } from 'react-router-dom'
 import { toggleCartHidden } from '../../redux/cart/cart.actions'
 
+import { Translate } from 'react-redux-i18n'
+
 import "./cart-dropdown.style.scss";
 
 import CartItem from '../cart-item/cart-item'
@@ -16,7 +18,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     {
       cartItems.length ?
       cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem}></CartItem>)
-      : <span className='empty-message'>Your cart is empty</span>
+      : <span className='empty-message'><Translate value='cartDropdown.empty'/></span>
     }
     </div>
     <CustomButton onClick={() => {
@@ -24,7 +26,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
         dispatch(toggleCartHidden())
         }
       }
-      >GO TO CHECKOUT
+      ><Translate value='cartDropdown.checkout' className='toUpper'/>
     </CustomButton>
   </div>
 );

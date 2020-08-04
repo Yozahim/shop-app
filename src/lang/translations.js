@@ -36,8 +36,21 @@ const translations = {
     shop: {
       addToCart: 'Add to cart'
     },
-    signInAndOut: {
-
+    signIn: {
+      header1: 'I already have an account',
+      subtitle: 'Sign in with your email and password',
+      email: "email",
+      password: "password",
+      signIn: "Sign in",
+      signInGoogle: "Sign in with google"
+    },
+    signUp: {
+      header1: "I don't have an account",
+      subtitle: "Sign up with your email and password",
+      name: "name",
+      password: "password",
+      confirmPassword: "confirm password",
+      signUp: "Sign up"
     }
   },
   pl: {
@@ -76,8 +89,21 @@ const translations = {
     shop: {
       addToCart: 'Dodaj do koszyka'
     },
-    signInAndOut: {
-      
+    signIn: {
+      header1: 'Mam już konto',
+      subtitle: 'Zaloguj się za pomocą maila i hasła',
+      email: "email",
+      password: "hasło",
+      signIn: "Zaloguj",
+      signInGoogle: "Zaloguj przez google"
+    },
+    signUp: {
+      header1: "Nie mam jeszcze konta",
+      subtitle: "Zarejestruj się za pomocą maila i hasła",
+      name: "imię",
+      password: "hasło",
+      confirmPassword: "potwierdź hasło",
+      signUp: "Zarejestruj"
     }
   }
 };

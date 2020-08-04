@@ -4,6 +4,8 @@ import { addItem } from "../../redux/cart/cart.actions";
 import "./collection-item.style.scss";
 import CustomButton from "../custom-button/custom-button";
 
+import { Translate } from 'react-redux-i18n'
+
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
   return (
@@ -17,7 +19,7 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="price">${price}</span>
       </div>
       <CustomButton onClick={() => addItem(item)} inverted>
-        ADD TO CART
+        <Translate value='shop.addToCart'/>
       </CustomButton>
     </div>
   );

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
 
+import { Translate } from 'react-redux-i18n'
+
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 import "./sign-up.scss";
@@ -45,8 +47,8 @@ const SignUp = () => {
   const { displayName, email, password, passwordRepeat } = userCredentials;
   return (
     <div className="sign-up">
-      <h2>I don't have a account</h2>
-      <span>Sign up with your email and password</span>
+      <h2><Translate value='signUp.header1'/></h2>
+      <span><Translate value='signUp.subtitle'/></span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput
           name="displayName"
@@ -54,7 +56,7 @@ const SignUp = () => {
           value={displayName}
           required
           onChange={handleChange}
-          label="Name"
+          label={<Translate value='signUp.name'/>}
         ></FormInput>
         <FormInput
           name="email"
@@ -62,7 +64,7 @@ const SignUp = () => {
           value={email}
           required
           onChange={handleChange}
-          label="email"
+          label={<Translate value='signUp.email'/>}
         ></FormInput>
         <FormInput
           name="password"
@@ -70,7 +72,7 @@ const SignUp = () => {
           value={password}
           required
           onChange={handleChange}
-          label="password"
+          label={<Translate value='signUp.password'/>}
         ></FormInput>
         <FormInput
           name="passwordRepeat"
@@ -78,9 +80,9 @@ const SignUp = () => {
           value={passwordRepeat}
           required
           onChange={handleChange}
-          label="confirm repeat"
+          label={<Translate value='signUp.confirmPassword'/>}
         ></FormInput>
-        <CustomButton type="submit">Sign up</CustomButton>
+        <CustomButton type="submit"><Translate value='signUp.signUp'/></CustomButton>
       </form>
     </div>
   );

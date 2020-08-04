@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import FormInput from '../form-input/form-input'
 import CustomButton from '../custom-button/custom-button'
 
+import { Translate } from 'react-redux-i18n'
+
 import "./sign-in.style.scss";
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
@@ -31,15 +33,16 @@ const SignIn = () => {
   }
     return (
       <div className='sign-in'>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
+      
+        <h2><Translate value='signIn.header1'/></h2>
+        <span><Translate value='signIn.subtitle'/></span>
         <form onSubmit={handleSubmit}>
           <FormInput 
             name='email' 
             type='email' 
             value={email} 
             required
-            label="email"
+            label={<Translate value='signIn.email'/>}
             handleChange={handleChange}>
           </FormInput>
           <FormInput 
@@ -47,13 +50,13 @@ const SignIn = () => {
             type='password' 
             value={password} 
             required
-            label="password"
+            label={<Translate value='signIn.password'/>}
             handleChange={handleChange}>
           </FormInput>
           <div className='buttons'>
-            <CustomButton type='submit'>Sign In</CustomButton>
+            <CustomButton type='submit'><Translate value='signIn.signIn'/></CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with google
+              <Translate value='signIn.signInGoogle'/>
             </CustomButton>
           </div>
         </form>

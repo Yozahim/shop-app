@@ -16,7 +16,6 @@ const ItemPreview = ({ location, addItem }) => {
   const item = location.state
 
   useEffect(() => {
-    console.log(item)
     if (!(!!item)) {
       history.push('/')      
     }
@@ -27,7 +26,7 @@ const ItemPreview = ({ location, addItem }) => {
       <div className='item-container'>
         <h1>{item.name}</h1>
         <img alt={item} src={item.imageUrl} className='image'/>
-        <h2>Price: ${item.price}</h2> 
+        <h2><Translate value="checkout.price" />: ${item.price}</h2> 
       </div>
       {/* Just for example  */}
       <div className='sizes-container'>

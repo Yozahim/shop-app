@@ -10,8 +10,10 @@ import { createStructuredSelector } from "reselect";
 // import CheckoutPage from './pages/checkout/checkout'
 // import ContactPage from './pages/contact/contact';
 
+import ErrorBoundary from "./components/error-boundary/error-boundary";
+
 import { GlobalStyle } from "./global.style";
-import Spinner from './components/with-spinner/spinner'
+import Spinner from "./components/with-spinner/spinner";
 
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
@@ -61,23 +63,25 @@ class App extends Component {
         <GlobalStyle />
         <Header></Header>
         <Switch>
-          <Suspense fallback={<Spinner/>}>
-            <Route exact path="/" component={HomePage}></Route>
-            <Route path="/shop" component={ShopPage}></Route>
-            <Route path="/itempreview" component={ItemPreview}></Route>
-            <Route exact path="/checkout" component={CheckoutPage}></Route>
-            <Route
-              path="/signin"
-              render={() =>
-                this.props.currentUser ? (
-                  <Redirect to="/" />
-                ) : (
-                  <SignInSignUpPage />
-                )
-              }
-            ></Route>
-            <Route path="/contact" component={ContactPage}></Route>
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<Spinner />}>
+              <Route exact path="/" component={HomePage}></Route>
+              <Route path="/shop" component={ShopPage}></Route>
+              <Route path="/itempreview" component={ItemPreview}></Route>
+              <Route exact path="/checkout" component={CheckoutPage}></Route>
+              <Route
+                path="/signin"
+                render={() =>
+                  this.props.currentUser ? (
+                    <Redirect to="/" />
+                  ) : (
+                    <SignInSignUpPage />
+                  )
+                }
+              ></Route>
+              <Route path="/contact" component={ContactPage}></Route>
+            </Suspense>
+          </ErrorBoundary>
         </Switch>
         <Footer></Footer>
       </div>
